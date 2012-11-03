@@ -1,0 +1,61 @@
+body {
+	font-family: Optima, Georgia, serif;
+	line-height: 1.3;
+	padding: 1.8em 2em;
+	-webkit-text-size-adjust: none;
+}
+
+#wrapper {
+	max-width: 600px;
+	margin: 0 auto;
+}
+
+h1 {
+	font-size: 125%;
+	font-weight: bold;
+}
+
+h2 {
+	margin: 1em 0;
+	padding: 0 2em;
+	color: #666;
+}
+
+p {
+	margin-top: 1em;
+}
+
+p.code {
+	font-family: Monaco, Courier, monospace;
+	font-size: 90%;
+	white-space: pre;
+}
+
+#footer {
+	white-space: nowrap;
+	overflow: hidden;
+}
+	#footer p {
+		float: left;
+	}
+	#footer p.right {
+		float: right;
+		text-align: right;
+	}
+
+strong {
+	font-weight: bold;
+}
+
+a {
+	color: #c00;
+}
+
+a:hover {
+	color: #600;
+}
+
+ul {
+	margin-top: 1em;
+	list-style: disc inside;
+}
