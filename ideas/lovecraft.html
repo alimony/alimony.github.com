@@ -29,21 +29,21 @@
 		<p>The concept behind Lovecraft is to analyze a very large number of code commits, looking for patterns. It may be easiest to illustrate this by an example. A repository features this piece of code:</p>
 
 		<p class="code">found = false
-    for item in list_of_items:
-        if item.is_the_one
-            found = true
-    if found:
-        do something</p>
+for item in list_of_items:
+    if item.is_the_one
+        found = true
+if found:
+    do something</p>
 
 		<p>Someone notices the rest of the loop can be skipped when the item is found and commits updated code, adding a break statement:</p>
 
 		<p class="code">found = false
-    for item in list_of_items:
-        if item.is_the_one
-            found = true
-            <strong>break</strong>
-    if found:
-        do something</p>
+for item in list_of_items:
+    if item.is_the_one
+        found = true
+        <strong>break</strong>
+if found:
+    do something</p>
 
 		<p>Now, if Lovecraft would look at this change from a generic point of view, disregarding variable names and such, it may turn out that a few thousand other commits in various repositories make the exact same change. And that another thousand repositories have code like the first piece, that could benefit from the one and same change.</p>
 		<p>Lovecraft connects occurences like this, but on a far more complex level. Based on knowns such as the language of the code, patterns are worked out from billions of commits and any projects that might benefit from found improvements are notified. Quantities also play a part; the more common a certain type of code change is, the more likely is it to be suggested.</p>
