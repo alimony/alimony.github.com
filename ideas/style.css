@@ -24,6 +24,11 @@ h2 {
 	color: #666;
 }
 
+h3 {
+	margin: 1em 0;
+	font-weight: bold;
+}
+
 p {
 	margin-top: 1em;
 }
@@ -64,4 +69,16 @@ a:hover {
 ul {
 	margin-top: 1em;
 	list-style: disc inside;
+}
+	ul li {
+		margin-top: 1em;
+	}
+	ul li:first-child {
+		margin-top: 0;
+	}
+
+hr {
+	border: 1px solid #666;
+	border-top: 0;
+	margin: 1em 0 0 0;
 }
