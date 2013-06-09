@@ -6,8 +6,9 @@
 	<meta name="description" content="An idea for a large-scale system that identifies and suggests potential improvements for any given source code repository, based on patterns in the commit history of many other repositories." />
 	<meta name="author" content="Markus Amalthea Magnuson" />
 	<meta name="viewport" content="width=400" />
-	<link rel="stylesheet" type="text/css" href="style.css" />
-	<script type="text/javascript">
+	<link rel="stylesheet" href="style.css" />
+	<script>
+	if (window.location.hostname === 'alimony.github.io') {
 		var _gaq = _gaq || [];
 		_gaq.push(['_setAccount', 'UA-36065913-1']);
 		_gaq.push(['_trackPageview']);
@@ -16,6 +17,7 @@
 			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
 			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 		})();
+	}
 	</script>
 </head>
 <body>
