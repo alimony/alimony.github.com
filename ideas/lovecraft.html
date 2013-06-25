@@ -22,9 +22,9 @@
 </head>
 <body>
 	<div id="wrapper">
-		<h1>Lovecraft: Crowdsourced, pattern-based code improvement</h1>
+		<h1>Lovecraft: Crowdsourced, <span class="nobr">pattern-based</span> code improvement</h1>
 
-		<h2>An idea for a large-scale system that identifies and suggests potential improvements for any given source code repository, based on patterns in the commit history of many other repositories.</h2>
+		<h2>An idea for a <span class="nobr">large-scale</span> system that identifies and suggests potential improvements for any given source code repository, based on patterns in the commit history of many other repositories.</h2>
 
 		<p>GitHub has more than two million users, and host more than four million repositories. Some repositories are very active and others less so, but the daily total number of commits is massive. Each of these commits contains someone’s idea of an improvement to the previously existing code.</p>
 		<p>Many ideas are highly specific to the project they apply to, though far from all. We can think of an opposite part of the spectrum, where ideas are entirely generic. Whether such ideas even exist is a question of philosophical nature, but we can in any case imagine a range of ideas inbetween the unique and the generic. Ideas to a lesser or greater degree applicable to projects other than the initial one.</p>
@@ -69,10 +69,10 @@ if found:
 		<h3>Additional notes</h3>
 
 		<ul>
-			<li>As suggested by <a href="http://norvig.com" target="_blank">Peter Norvig</a>, the system could try figuring out the density of bugs and/or commits based on features of the code. For example, is a quadruply-nested loop more likely to lead to bugs?</li>
+			<li>As suggested by <a href="http://norvig.com" target="_blank">Peter Norvig</a>, the system could try figuring out the density of bugs and/or commits based on features of the code. For example, is a <span class="nobr">quadruply-nested</span> loop more likely to lead to bugs?</li>
 			<li>Does the amount of comments near certain types of code imply that it needs more explanation than other code, being not very clear? Does certain types of code comments (e.g. “TODO”) more often go with buggy code?</li>
-			<li>Could the number of commits to certain types of code, or the number of references to it from issue tracking systems, mailing lists, etc. say something about how much that code is under discussion and/or maintenance? Much discussed and changed code could mean sub-optimal code.</li>
-			<li>With a system modular enough, any indicators of “low-quality” code could be fed into it and evaluated. In fact, the system could measure its own performance and what kinds of suggestions that are considered good. For example, suggested improvements later found to have been committed to the original code could be marked as “successful”, a metric then used in upcoming suggestions. The whole thing would be an ever evolving feedback mechanism.</li>
+			<li>Could the number of commits to certain types of code, or the number of references to it from issue tracking systems, mailing lists, etc. say something about how much that code is under discussion and/or maintenance? Much discussed and changed code could mean <span class="nobr">sub-optimal</span> code.</li>
+			<li>With a system modular enough, any indicators of <span class="nobr">“low-quality”</span> code could be fed into it and evaluated. In fact, the system could measure its own performance and what kinds of suggestions that are considered good. For example, suggested improvements later found to have been committed to the original code could be marked as “successful”, a metric then used in upcoming suggestions. The whole thing would be an ever evolving feedback mechanism.</li>
 		</ul>
 
 		<hr />
