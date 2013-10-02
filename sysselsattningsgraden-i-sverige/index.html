@@ -1,92 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="utf-8" />
-	<title>Sysselsättningsgraden i Sverige</title>
-	<meta name="description" content="Antalet sysselsatta i Sverige relativt till befolkningen, 1976–2012." />
-	<meta name="author" content="Markus Amalthea Magnuson" />
-	<meta name="viewport" content="width=device-width,initial-scale=1" />
-	<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Playfair+Display:400,700,900,400italic,700italic,900italic" />
-	<link rel="stylesheet" href="style.1.css" />
-	<link rel="canonical" href="http://alimony.github.io/sysselsattningsgraden-i-sverige/" />
-	<base target="_blank" />
+	<link rel="canonical" href="http://forbannadstatistik.se/" />
 	<script>
-	if (window.location.hostname === 'alimony.github.io') {
-		var _gaq = _gaq || [];
-		_gaq.push(['_setAccount', 'UA-36065913-1']);
-		_gaq.push(['_trackPageview']);
-		(function() {
-			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-		})();
-	}
+	document.location = 'http://forbannadstatistik.se/';
 	</script>
 </head>
 <body>
-	<div id="wrapper">
-		<h1>Sysselsättnings&shy;graden i Sverige</h1>
-		<h2 class="lighter">1976–2012</h2>
-		<p>Det finns hos <a href="http://www.scb.se/">Statistiska centralbyrån</a> ingen lättillgänglig statistik över syssel&shy;sättnings&shy;graden i Sverige över tid. Vid efterfrågan av denna data fick jag istället instruktioner för hur siffran kan räknas ut på egen hand utifrån ett antal andra tabeller. Tråkigt att behöva göra mer än en gång, så jag skrev lite kod som hämtar alla siffror som behövs via Statistiska centralbyråns <a href="http://www.scb.se/Pages/List____354082.aspx">API</a> och gör uträkningarna automatiskt. Nedan presenteras denna statistik, som med enkelhet kan beräknas igen så ofta det behövs.</p>
-		<p>Syssel&shy;sättnings&shy;graden definieras som antalet sysselsatta i Sverige relativt till befolkningen. Befolkningen är i detta fall summan av syssel&shy;satta, arbets&shy;lösa, samt de som ej ingår i arbets&shy;kraften, enligt uppskattning i <a href="http://www.scb.se/Pages/Product____23262.aspx">Arbets&shy;krafts&shy;undersökningarna (AKU)</a>. 2005 ändrades definitionen av arbets&shy;kraften till att gälla åldern <span class="nobr">15–74</span> år istället för som tidigare <span class="nobr">16–64</span> år. Samtliga siffror nedan använder den “gamla” definitionen <span class="nobr">16–64</span> år för att syssel&shy;sättnings&shy;graden ska vara jämförbar över hela tids&shy;serien.</p>
-		<div id="chart"></div>
-		<table cellspacing="0" cellpadding="0">
-			<thead>
-				<tr>
-					<td></td>
-					<td>Befolk&shy;ningen<br />
-						<span class="lighter">16–64 år</span></td>
-					<td>Antal syssel&shy;satta</td>
-					<td>Syssel&shy;sättnings&shy;grad</td>
-				</tr>
-			</thead>
-			<tbody id="tbody">
-				<tr><td>1976</td><td>5,16 milj.</td><td>4,01 milj.</td><td>77,69%</td></tr>
-				<tr><td>1977</td><td>5,17 milj.</td><td>4,03 milj.</td><td>77,95%</td></tr>
-				<tr><td>1978</td><td>5,18 milj.</td><td>4,04 milj.</td><td>78,10%</td></tr>
-				<tr><td>1979</td><td>5,19 milj.</td><td>4,11 milj.</td><td>79,17%</td></tr>
-				<tr><td>1980</td><td>5,21 milj.</td><td>4,16 milj.</td><td>79,79%</td></tr>
-				<tr><td>1981</td><td>5,23 milj.</td><td>4,16 milj.</td><td>79,45%</td></tr>
-				<tr><td>1982</td><td>5,25 milj.</td><td>4,15 milj.</td><td>79,06%</td></tr>
-				<tr><td>1983</td><td>5,27 milj.</td><td>4,16 milj.</td><td>78,94%</td></tr>
-				<tr><td>1984</td><td>5,29 milj.</td><td>4,20 milj.</td><td>79,36%</td></tr>
-				<tr><td>1985</td><td>5,29 milj.</td><td>4,24 milj.</td><td>80,25%</td></tr>
-				<tr><td>1986</td><td>5,29 milj.</td><td>4,27 milj.</td><td>80,76%</td></tr>
-				<tr><td>1987</td><td>5,30 milj.</td><td>4,32 milj.</td><td>81,45%</td></tr>
-				<tr><td>1988</td><td>5,32 milj.</td><td>4,38 milj.</td><td>82,20%</td></tr>
-				<tr><td>1989</td><td>5,36 milj.</td><td>4,44 milj.</td><td>82,93%</td></tr>
-				<tr><td>1990</td><td>5,40 milj.</td><td>4,49 milj.</td><td>83,11%</td></tr>
-				<tr><td>1991</td><td>5,42 milj.</td><td>4,40 milj.</td><td>81,04%</td></tr>
-				<tr><td>1992</td><td>5,45 milj.</td><td>4,21 milj.</td><td>77,27%</td></tr>
-				<tr><td>1993</td><td>5,46 milj.</td><td>3,96 milj.</td><td>72,59%</td></tr>
-				<tr><td>1994</td><td>5,50 milj.</td><td>3,93 milj.</td><td>71,47%</td></tr>
-				<tr><td>1995</td><td>5,52 milj.</td><td>3,99 milj.</td><td>72,17%</td></tr>
-				<tr><td>1996</td><td>5,54 milj.</td><td>3,96 milj.</td><td>71,57%</td></tr>
-				<tr><td>1997</td><td>5,55 milj.</td><td>3,92 milj.</td><td>70,67%</td></tr>
-				<tr><td>1998</td><td>5,56 milj.</td><td>3,98 milj.</td><td>71,53%</td></tr>
-				<tr><td>1999</td><td>5,58 milj.</td><td>4,07 milj.</td><td>72,89%</td></tr>
-				<tr><td>2000</td><td>5,60 milj.</td><td>4,16 milj.</td><td>74,23%</td></tr>
-				<tr><td>2001</td><td>5,63 milj.</td><td>4,24 milj.</td><td>75,27%</td></tr>
-				<tr><td>2002</td><td>5,67 milj.</td><td>4,24 milj.</td><td>74,90%</td></tr>
-				<tr><td>2003</td><td>5,70 milj.</td><td>4,23 milj.</td><td>74,25%</td></tr>
-				<tr><td>2004</td><td>5,74 milj.</td><td>4,21 milj.</td><td>73,45%</td></tr>
-				<tr><td>2005</td><td>5,77 milj.</td><td>4,26 milj.</td><td>73,88%</td></tr>
-				<tr><td>2006</td><td>5,83 milj.</td><td>4,34 milj.</td><td>74,51%</td></tr>
-				<tr><td>2007</td><td>5,88 milj.</td><td>4,44 milj.</td><td>75,64%</td></tr>
-				<tr><td>2008</td><td>5,92 milj.</td><td>4,48 milj.</td><td>75,71%</td></tr>
-				<tr><td>2009</td><td>5,96 milj.</td><td>4,38 milj.</td><td>73,48%</td></tr>
-				<tr><td>2010</td><td>5,99 milj.</td><td>4,39 milj.</td><td>73,37%</td></tr>
-				<tr><td>2011</td><td>6,01 milj.</td><td>4,49 milj.</td><td>74,77%</td></tr>
-				<tr><td>2012</td><td>6,01 milj.</td><td>4,50 milj.</td><td>74,90%</td></tr>
-			</tbody>
-		</table>
-		<p class="smaller">Källor:<br />
-		• <a href="http://www.scb.se/Pages/SSD/SSD_SelectVariables____340487.aspx?px_tableid=ssd_extern%3aNAKUBefolkningAr&amp;rxid=0c8ce88b-e330-46f5-8862-866e70233672">Befolkningen 15–74 år (AKU) efter kön, ålder och arbetskraftstillhörighet. År 2005–2012</a><br />
-		• <a href="http://www.scb.se/Pages/SSD/SSD_SelectVariables____340487.aspx?px_tableid=ssd_extern%3aAKUABefolkning&amp;rxid=ca9e893f-4f15-485c-858c-a7109359c1da">Befolkningen 16–64 år (AKU) efter kön, ålder och arbetskraftstillhörighet. År 1976–2004</a></p>
-	</div>
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
-	<script>window.jQuery || document.write('<script src="jquery-1.10.1.min.js"><\/script>')</script>
-	<script src="//www.google.com/jsapi"></script>
-	<script src="script.1.js"></script>
+	<a href="http://forbannadstatistik.se/">Den här sidan har flyttat, klicka här.</a>
 </body>
 </html>
