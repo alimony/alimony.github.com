@@ -1,67 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="utf-8" />
-	<title>Cloverfield: A new kind of web browser</title>
-	<meta name="description" content="A concept for a web browser building upon the features of Spotify, centered around making lists of and sharing links, following people, and having open web apps and the discovery of them built-in." />
-	<meta name="author" content="Markus Amalthea Magnuson" />
-	<meta name="viewport" content="width=400" />
-	<link rel="stylesheet" href="style.css" />
-	<script>
-	if (window.location.hostname === 'alimony.github.io') {
-		var _gaq = _gaq || [];
-		_gaq.push(['_setAccount', 'UA-36065913-1']);
-		_gaq.push(['_trackPageview']);
-		(function() {
-			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-		})();
-	}
-	</script>
-</head>
-<body>
-	<div id="wrapper">
-		<h1>Cloverfield: A new kind of web browser</h1>
-
-		<h2>A concept for a web browser building upon the features of Spotify, centered around making lists of and sharing links, following people, and having open web apps and the discovery of them <span class="nobr">built-in</span>.</h2>
-
-		<p>I suddenly realized that the user interface of <a href="https://www.spotify.com" target="_blank">Spotify</a> could serve as a prototype for a new kind of web browser, codenamed Cloverfield. Where Spotify handles songs and playlists, Cloverfield would instead handle links, bookmarks, and linklists. First, have a look at <a href="img/cloverfield/spotify-01.png" target="_blank">this screenshot</a> from Spotify if you are not familiar with its interface or need to refresh your memory. Next, keep that image in mind while reading on; this is how I envision a web browser based on similar layout and functionality:</p>
-		<p>The top toolbar contains the navigation buttons you would expect: back/forward, home, reload, an address field, and a search field. More of a novelty in the browser world, it would also have a notification button and a user profile button.</p>
-		<p>The notification button displays a number badge when there are new notifications, such as someone sent you a link, or a linklist you follow has new links. When clicked, the notification button displays a popup menu listing recent notifications.</p>
-		<p>The user profile button displays the user you are currently logged in as, and when clicked sends you to your own profile page. Logging in to the web browser itself is something already available in for example Google Chrome, but would in Cloverfield have a more visible place.</p>
-		<p>The main browser view stretches from the top toolbar to the very bottom of the window, much like in any web browser available today. However, to the left of the browser view is a sidebar, which is where the really interesting things about Cloverfield live. Clicking an item in the left sidebar will display its content in the main browser view, and the sidebar can easily be collapsed to make more space for the browser view.</p>
-		<p>The <strong>What’s New</strong> view is a feed reader, showing any new content based on your subscriptions through RSS/Atom/etc. This simple but powerful technology is not going away, despite what Google thinks.</p>
-		<p>The <strong>Follow</strong> view displays the people you follow and who follow you, and some recommendations on who to follow based on your existing friends.</p>
-		<p>The <strong>Inbox</strong> item is a list of all links you have been sent by others. It has columns for the title of the link, who sent it, and the time and date when it was sent to you. When sending a link to someone, you can also add a comment to it, which will show up in the inbox as a chat bubble icon. As in any list, you can also star links directly.</p>
-		<p>The <strong>Devices</strong> item has any connected devices listed, so you can access their media quickly, for example uploading a photo straight from your phone to an image hosting service, or sending a text note from your tablet to your online idea collection.</p>
-		<p>The <strong>Apps</strong> section can contain any web apps, as defined by a standard such as <a href="https://developer.mozilla.org/en-US/docs/Web/Apps" target="_blank">Open Web Apps</a> by Mozilla. Cloverfield should support as many web app formats as possible, not tying the user to one market or ecosystem. Apps can be added to this section by installing them from a website, or by finding them in the <strong>App Finder</strong> service available in the <strong>Apps</strong> section. The App Finder lists web apps from a few default trusted sources such as the <a href="https://marketplace.firefox.com/" target="_blank">Firefox Marketplace</a>. But additional sources can be added, much like you would add sources to a Linux package manager, on top of the default ones.</p>
-		<p>The <span class="nobr">built-in</span> <strong>Top Lists</strong> app has various lists of the most popular links in the past time, <span class="nobr">all-time</span>, in different geographic areas, and so on. This view may also contain top links among the people you follow.</p>
-		<p>A replacement for the <strong>Radio</strong> app in Spotify would be a <strong>Discover</strong> app in Cloverfield. Starting from a link you choose, it will display other links that you might like. You can click a thumbs up on them or skip to the next link, and the app will adapt to your taste over time. It works much like <a href="http://www.stumbleupon.com/" target="_blank">StumbleUpon</a> when you want to discover new websites.</p>
-		<p>The <strong>Collection</strong> section has everything related to your links. The <strong>Library</strong> item is similar to current browsers’ bookmarks view, containing all links you have saved, either by starring them or by adding them to a linklist. This is your own personal collection of links, which can be shared, organized into new linklists, and so on. Linklists can also be organized into folders, nested to any level.</p>
-		<p><strong>Local Files</strong> may mostly be of use to developers. It contains any local websites you are working on, or have available offline for other reasons.</p>
-		<p>The <strong>Starred</strong> view lists all links you have starred, with info on when you starred them.</p>
-		<p>Clicking <strong>New Linklist</strong> will make a new linklist, prompting you for a title for the list. You can also write a short description and/or add an image for it, both which will be displayed at the top of the view when someone else is visiting your linklist.</p>
-		<p>The rest of the <strong>Collection</strong> section is all your linklists. These can be of three types: regular, published, or collaborative. A regular linklist is only viewable and editable by you. You can add, remove, and reorder links at any time. If you choose to share one of your linklists, it is considered published. Anyone with the unique and unguessable URL for the linklist can visit it and, if desired, follow it. When following a linklist, you will get notifications whenever links are added to it. You can also make a list collaborative, meaning that others can edit it too. Unlike Spotify, Cloverfield has much more useful access control on lists, meaning that you can make them viewable or editable only to certain users.</p>
-		<p>Just a few last words on Cloverfield. After catching this thought on what Spotify would be if it handled links instead, everything just seemed to fit in perfectly. People already make lists of links, bookmark them, star them, and share them. Cloverfield has all of this <span class="nobr">built-in</span>. People already send each other links, follow blogs and websites, and comment on these. Cloverfield has all of this <span class="nobr">built-in</span> too, and is an inherently social web browser. And the whole web app thing is just starting to happen (in projects like <a href="https://developer.mozilla.org/en/docs/Mozilla/Firefox_OS" target="_blank">Firefox OS</a>) and could be a very important move for the web as a whole. Cloverfield has a natural structure for incorporating web apps that is much more straight forward than any desktop web app implementations I’ve seen so far.</p>
-		<p>And on a very important end note: Cloverfield should use open standards and technologies as far as possible. We don’t want the <span class="nobr">lock-in</span> of Google, Spotify, or Apple. We want subscriptions through RSS, website login through something like <a href="http://www.mozilla.org/en-US/persona/" target="_blank">Persona</a>, and messages through encrypted email. There is obviously need for a sync service in Cloverfield, but we should have the choice to use any such service, not just a single one. And the whole thing should be built on open technologies, with web apps you can install from anywhere if they are not dangerous; the <a href="https://developer.mozilla.org/en-US/docs/Mozilla/Firefox_OS/Security/Security_model#App_Security" target="_blank">security model of Firefox OS</a> is a really good idea.</p>
-		<p>This is what I’ve thought of so far, but I’m sure others can come up with brilliant ways to expand on this idea for a new kind of web browser. I encourage you to use Spotify for a few minutes while keeping Cloverfield in mind. You will hopefully recognize the potential of such an application. It would be a really interesting browser experience.</p>
-		<p>Someone with the means ought to build it.</p>
-
-		<div id="footer">
-			<p class="left">
-				<strong>Markus Amalthea Magnuson</strong><br />
-				<a href="mailto:markus.magnuson@gmail.com">markus.magnuson@gmail.com</a>
-			</p>
-			<p class="right">
-				<strong>Last updated</strong><br />
-				2013-06-25
-			</p>
-		</div>
-
-		<hr />
-
-		<p>← <a href=".">Read more ideas</a></p>
-	</div>
-</body>
-</html>
+---
+layout: idea
+title: 'Cloverfield: A new kind of web browser'
+description: 'A concept for a web browser building upon the features of Spotify, centered around making lists of and sharing links, following people, and having open web apps and the discovery of them <span class="nobr">built-in</span>.'
+last_updated: 2013-06-25 00:00:00 +0200
+order: 3
+---
+<p>I suddenly realized that the user interface of <a href="https://www.spotify.com" target="_blank">Spotify</a> could serve as a prototype for a new kind of web browser, codenamed Cloverfield. Where Spotify handles songs and playlists, Cloverfield would instead handle links, bookmarks, and linklists. First, have a look at <a href="img/cloverfield/spotify-01.png" target="_blank">this screenshot</a> from Spotify if you are not familiar with its interface or need to refresh your memory. Next, keep that image in mind while reading on; this is how I envision a web browser based on similar layout and functionality:</p>
+<p>The top toolbar contains the navigation buttons you would expect: back/forward, home, reload, an address field, and a search field. More of a novelty in the browser world, it would also have a notification button and a user profile button.</p>
+<p>The notification button displays a number badge when there are new notifications, such as someone sent you a link, or a linklist you follow has new links. When clicked, the notification button displays a popup menu listing recent notifications.</p>
+<p>The user profile button displays the user you are currently logged in as, and when clicked sends you to your own profile page. Logging in to the web browser itself is something already available in for example Google Chrome, but would in Cloverfield have a more visible place.</p>
+<p>The main browser view stretches from the top toolbar to the very bottom of the window, much like in any web browser available today. However, to the left of the browser view is a sidebar, which is where the really interesting things about Cloverfield live. Clicking an item in the left sidebar will display its content in the main browser view, and the sidebar can easily be collapsed to make more space for the browser view.</p>
+<p>The <strong>What’s New</strong> view is a feed reader, showing any new content based on your subscriptions through RSS/Atom/etc. This simple but powerful technology is not going away, despite what Google thinks.</p>
+<p>The <strong>Follow</strong> view displays the people you follow and who follow you, and some recommendations on who to follow based on your existing friends.</p>
+<p>The <strong>Inbox</strong> item is a list of all links you have been sent by others. It has columns for the title of the link, who sent it, and the time and date when it was sent to you. When sending a link to someone, you can also add a comment to it, which will show up in the inbox as a chat bubble icon. As in any list, you can also star links directly.</p>
+<p>The <strong>Devices</strong> item has any connected devices listed, so you can access their media quickly, for example uploading a photo straight from your phone to an image hosting service, or sending a text note from your tablet to your online idea collection.</p>
+<p>The <strong>Apps</strong> section can contain any web apps, as defined by a standard such as <a href="https://developer.mozilla.org/en-US/docs/Web/Apps" target="_blank">Open Web Apps</a> by Mozilla. Cloverfield should support as many web app formats as possible, not tying the user to one market or ecosystem. Apps can be added to this section by installing them from a website, or by finding them in the <strong>App Finder</strong> service available in the <strong>Apps</strong> section. The App Finder lists web apps from a few default trusted sources such as the <a href="https://marketplace.firefox.com/" target="_blank">Firefox Marketplace</a>. But additional sources can be added, much like you would add sources to a Linux package manager, on top of the default ones.</p>
+<p>The <span class="nobr">built-in</span> <strong>Top Lists</strong> app has various lists of the most popular links in the past time, <span class="nobr">all-time</span>, in different geographic areas, and so on. This view may also contain top links among the people you follow.</p>
+<p>A replacement for the <strong>Radio</strong> app in Spotify would be a <strong>Discover</strong> app in Cloverfield. Starting from a link you choose, it will display other links that you might like. You can click a thumbs up on them or skip to the next link, and the app will adapt to your taste over time. It works much like <a href="http://www.stumbleupon.com/" target="_blank">StumbleUpon</a> when you want to discover new websites.</p>
+<p>The <strong>Collection</strong> section has everything related to your links. The <strong>Library</strong> item is similar to current browsers’ bookmarks view, containing all links you have saved, either by starring them or by adding them to a linklist. This is your own personal collection of links, which can be shared, organized into new linklists, and so on. Linklists can also be organized into folders, nested to any level.</p>
+<p><strong>Local Files</strong> may mostly be of use to developers. It contains any local websites you are working on, or have available offline for other reasons.</p>
+<p>The <strong>Starred</strong> view lists all links you have starred, with info on when you starred them.</p>
+<p>Clicking <strong>New Linklist</strong> will make a new linklist, prompting you for a title for the list. You can also write a short description and/or add an image for it, both which will be displayed at the top of the view when someone else is visiting your linklist.</p>
+<p>The rest of the <strong>Collection</strong> section is all your linklists. These can be of three types: regular, published, or collaborative. A regular linklist is only viewable and editable by you. You can add, remove, and reorder links at any time. If you choose to share one of your linklists, it is considered published. Anyone with the unique and unguessable URL for the linklist can visit it and, if desired, follow it. When following a linklist, you will get notifications whenever links are added to it. You can also make a list collaborative, meaning that others can edit it too. Unlike Spotify, Cloverfield has much more useful access control on lists, meaning that you can make them viewable or editable only to certain users.</p>
+<p>Just a few last words on Cloverfield. After catching this thought on what Spotify would be if it handled links instead, everything just seemed to fit in perfectly. People already make lists of links, bookmark them, star them, and share them. Cloverfield has all of this <span class="nobr">built-in</span>. People already send each other links, follow blogs and websites, and comment on these. Cloverfield has all of this <span class="nobr">built-in</span> too, and is an inherently social web browser. And the whole web app thing is just starting to happen (in projects like <a href="https://developer.mozilla.org/en/docs/Mozilla/Firefox_OS" target="_blank">Firefox OS</a>) and could be a very important move for the web as a whole. Cloverfield has a natural structure for incorporating web apps that is much more straight forward than any desktop web app implementations I’ve seen so far.</p>
+<p>And on a very important end note: Cloverfield should use open standards and technologies as far as possible. We don’t want the <span class="nobr">lock-in</span> of Google, Spotify, or Apple. We want subscriptions through RSS, website login through something like <a href="http://www.mozilla.org/en-US/persona/" target="_blank">Persona</a>, and messages through encrypted email. There is obviously need for a sync service in Cloverfield, but we should have the choice to use any such service, not just a single one. And the whole thing should be built on open technologies, with web apps you can install from anywhere if they are not dangerous; the <a href="https://developer.mozilla.org/en-US/docs/Mozilla/Firefox_OS/Security/Security_model#App_Security" target="_blank">security model of Firefox OS</a> is a really good idea.</p>
+<p>This is what I’ve thought of so far, but I’m sure others can come up with brilliant ways to expand on this idea for a new kind of web browser. I encourage you to use Spotify for a few minutes while keeping Cloverfield in mind. You will hopefully recognize the potential of such an application. It would be a really interesting browser experience.</p>
+<p>Someone with the means ought to build it.</p>

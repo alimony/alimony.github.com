@@ -1,0 +1,10 @@
+safe: true
+timezone: Europe/Stockholm
+
+baseurl: http://alimony.github.io
+live_hostname: alimony.github.io
+author: Markus Amalthea Magnuson
+email: markus.magnuson@gmail.com
+google_analytics_id: UA-36065913-1
+
+ideas_title: The Ideas of Markus Amalthea Magnuson

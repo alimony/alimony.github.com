@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>{{ page.title | strip_html }}</title>
+	<meta name="description" content="{{ page.description | strip_html }}" />
+	<meta name="author" content="Markus Amalthea Magnuson" />
+	<meta name="viewport" content="width=400" />
+	<meta property="og:title" content="{{ page.title | strip_html }}" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="{{ site.baseurl }}{{ page.url }}" />
+	<meta property="og:site_name" content="{{ site.ideas_title }}" />
+	<meta property="og:description" content="{{ page.description | strip_html }}" />
+	<link rel="stylesheet" href="{{ site.baseurl }}/ideas/style.css" />
+	<link rel="alternate" type="application/rss+xml" title="Subscribe to {{ site.ideas_title }}" href="{{ site.baseurl }}/ideas/feed.xml" />
+	<script>
+	if (window.location.hostname === '{{ site.live_hostname }}') {
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', '{{ site.google_analytics_id }}']);
+		_gaq.push(['_setSiteSpeedSampleRate', 100]);
+		_gaq.push(['_trackPageview']);
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	}
+	</script>
+</head>
