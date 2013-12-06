@@ -49,6 +49,8 @@ p { margin-top: 1em; }
 
 strong { font-weight: bold; }
 
+em { font-style: italic; }
+
 a { color: #c00; }
 
 	a:hover { color: #600; }
