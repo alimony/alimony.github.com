@@ -50,6 +50,6 @@ for year in years:
             concerts.append((date, link.get('href')))
         time.sleep(1)
 
-stderr('Found a total of %i concerts:\n%s' % (len(concerts), concerts))
+stderr('Found a total of %i concerts' % len(concerts))
 
 print json.dumps([(date.isoformat(), href) for date, href in concerts], indent=4)
