@@ -2,6 +2,7 @@ $(document).ready(function () {
 	'use strict';
 
 	var ARTIST_ID = 3592216; // Interpreti Veneziani on Discogs.
+	var NUMBER_OF_RELEASES = 18; // To keep track of how many releases are left to add on Discogs.
 	var RELEASES_API_URL = 'http://api.discogs.com/artists/' + ARTIST_ID + '/releases';
 	var WEBSITE_BASE_URL = 'http://www.interpretiveneziani.com/en';
 	var CONCERTS_JSONP_URL = 'http://rightbox.org/alimony.github.com/interpreti-veneziani/scripts/concerts.php';
@@ -48,7 +49,15 @@ $(document).ready(function () {
 					'</div>');
 			});
 
-			// Remove the "Loading..." text by emptying its parent.
+			var releasesLeft = NUMBER_OF_RELEASES - releases.length;
+			if (releasesLeft > 0) {
+				elementsToAdd.push('' +
+					'<div class="release" style="background: none;">' +
+					'<em class="year">(' + releasesLeft + ' releases not yet<br /> added to <a href="http://www.discogs.com/artist/3592216-Interpreti-Veneziani" target="_blank">Discogs</a>.)</em>' +
+					'</div>');
+			}
+
+			// Remove the "Loading..." text by emptying its parent, and add all elements.
 			$('#releases').empty().append(elementsToAdd.join(''));
 
 			// Color all album backgrounds based on colors in the image.
