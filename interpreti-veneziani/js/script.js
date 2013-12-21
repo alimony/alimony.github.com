@@ -62,6 +62,8 @@ $(document).ready(function () {
 	$.ajax({
 		url: CONCERTS_JSONP_URL,
 		success: function (data) {
+			console.log('Successfully fetched concert data:', data);
+
 			var calendar = {};
 			// This object will at the end hold a structure of dates like this:
 			// calendar = {
