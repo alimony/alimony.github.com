@@ -4,7 +4,7 @@
 	<meta charset="utf-8" />
 	<title>Great music not on Spotify</title>
 	<meta name="description" content="This is my growing collection of great music that is not found on Spotify." />
-	<meta name="author" content="Markus Amalthea Magnuson" />
+	<meta name="author" content="{{ site.author }}" />
 	<meta name="viewport" content="width=device-width,initial-scale=1" />
 	<base target="_blank" />
 	<style>
@@ -56,18 +56,7 @@
 		color: #39520b;
 	}
 	</style>
-	<script>
-	if (window.location.hostname === 'alimony.github.io') {
-		var _gaq = _gaq || [];
-		_gaq.push(['_setAccount', 'UA-36065913-1']);
-		_gaq.push(['_trackPageview']);
-		(function() {
-			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-		})();
-	}
-	</script>
+	{% include google_analytics.html %}
 </head>
 <body>
 	<div id="wrapper">
@@ -85,7 +74,7 @@
 			<li>The <a href="http://www.youtube.com/results?search_query=en+k%C3%A4rlekshistoria+soundtrack">soundtrack</a> of <em>En kärlekshistoria</em> (<a href="http://www.imdb.com/title/tt0065955/"><em>A Swedish Love Story</em></a>) by <a href="http://www.youtube.com/results?search_query=bj%C3%B6rn+isf%C3%A4lt">Björn Isfält</a> et. al.</li>
 			<li><a href="http://www.youtube.com/results?search_query=the+beatles">The Beatles</a></li>
 		</ul>
-		<p>If you find that something of the above is broken, or indeed on Spotify, <a href="mailto:markus.magnuson@gmail.com">let me know</a>.</p>
+		<p>If you find that something of the above is broken, or indeed on Spotify, <a href="mailto:{{ site.email }}">let me know</a>.</p>
 		<p class="small">(If you find that something of the above is not great, you need to listen again.)</p>
 	</div>
 </body>

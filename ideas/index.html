@@ -2,3 +2,21 @@
 layout: ideas_index
 exclude_from_rss: true
 ---
+{% include ideas_head.html %}
+<body>
+	<div id="wrapper">
+		<h1>{{ site.ideas_title }}</h1>
+		<ul>
+		{% for order in (1..site.pages.size) reversed %}
+			{% for p in site.pages %}
+				{% if p.order == order %}
+					<li><a href="{{ p.url }}">{{ p.title }}</a></li>
+				{% endif %}
+			{% endfor %}
+		{% endfor %}
+		</ul>
+		<p><strong>{{ site.author }}</strong><br />
+		<a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
+	</div>
+</body>
+</html>
