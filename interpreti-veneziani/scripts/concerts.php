@@ -1,8 +1,5 @@
 <?php
 
-// We need this to allow incoming JSONP requests.
-header("Access-Control-Allow-Origin: *");
-
 // This is the local file to echo, wrapped as JSONP. It's being generated on the
 // server daily, through the fetch_interpreti_concerts.py script.
 define('CONCERTS_JSON', 'concerts.json');
