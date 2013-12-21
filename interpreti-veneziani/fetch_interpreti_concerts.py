@@ -2,7 +2,8 @@
 # encoding: utf-8
 
 '''
-description
+This script will fetch calendar data from the official Interpreti Veneziani
+website and output it as a list of date items in JSON for later use.
 '''
 
 import datetime
