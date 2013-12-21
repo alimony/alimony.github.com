@@ -1,9 +1,26 @@
 body {
-	background: #1a1a1a url(../img/black_lozenge/black_lozenge.png) top left repeat scroll;
+	background: #1a1a1a url(../img/black_lozenge/black_lozenge.png);
 	color: #ccc;
 	margin: 0;
-	padding: 2em;
+	padding: 2em 2em 1.5em 2em;
 	font: 100% Cardo, serif;
+}
+
+@media all and (max-width: 48em) { /* Same as #wrapper width. */
+	body {
+		padding: 1em;
+	}
+}
+
+@media
+only screen and (-webkit-min-device-pixel-ratio: 1.5),
+only screen and (-o-min-device-pixel-ratio: 3/2),
+only screen and (min--moz-device-pixel-ratio: 1.5),
+only screen and (min-device-pixel-ratio: 1.5) {
+	body {
+		background-image: url(../img/black_lozenge/black_lozenge_@2X.png);
+		background-size: 38px 38px;
+	}
 }
 
 #wrapper {
@@ -19,7 +36,7 @@ h1, h2, h3 {
 h2, h3 { font-style: italic; }
 
 h1 {
-	font: 700% "Miss Fajardose", cursive;
+	font: 700%/1.1 "Miss Fajardose", cursive;
 	text-shadow: 0 0 0.1em rgba(253, 208, 23, 0.7);
 	text-align: center;
 }
@@ -27,6 +44,11 @@ h1 {
 h2 { margin: 1em 0; }
 
 h1 + h2 { margin-top: 0; }
+
+h4 {
+	font-size: 100%;
+	margin: 1.25em 0 0.75em 0;
+}
 
 a {
 	color: rgb(253, 208, 23);
@@ -55,6 +77,21 @@ a {
 		width: 25%;
 		text-align: center;
 	}
+		/* Gradually split the release grid into fewer and fewer columns as the
+		page width gets smaller, which works nicely all the way down to mobile. */
+
+		@media all and (max-width: 84em) { /* Same as #wrapper width + body padding. */
+			.release { width: 33.33333%; }
+		}
+
+		@media all and (max-width: 64em) {
+			.release { width: 50%; }
+		}
+
+		@media all and (max-width: 48em) {
+			.release { width: 100%; }
+		}
+
 		.release img {
 			margin-top: 0.5em;
 			-webkit-box-shadow: 0 0 0.5em 0 rgba(20, 20, 20, 0.7);
@@ -67,7 +104,10 @@ a {
 			margin-top: 0.25em;
 		}
 
-#concerts a { margin-left: 1em; }
+#concerts a {
+	display: inline-block;
+	margin: 0 0 0.5em 1em;
+}
 
 #links {
 	list-style: none;
@@ -76,6 +116,6 @@ a {
 }
 	#links li {
 		display: inline-block;
-		margin-left: 1em;
+		margin: 0 0 0.5em 1em;
 	}
 		#links li:first-child { margin-left: 0; }
