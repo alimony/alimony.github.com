@@ -4,7 +4,7 @@ $(document).ready(function () {
 	var ARTIST_ID = 3592216; // Interpreti Veneziani on Discogs.
 	var RELEASES_API_URL = 'http://api.discogs.com/artists/' + ARTIST_ID + '/releases';
 	var WEBSITE_BASE_URL = 'http://www.interpretiveneziani.com/en';
-	var CONCERTS_JSONP_URL = 'http://rightbox.org/interpreti-veneziani/concerts.php';
+	var CONCERTS_JSONP_URL = 'http://rightbox.org/alimony.github.com/interpreti-veneziani/scripts/concerts.php';
 
 	// This will map Discogs id to a release's URL on the official website.
 	var WEBSITE_PATHS = {
