@@ -1,0 +1,81 @@
+body {
+	background: #1a1a1a url(../img/black_lozenge/black_lozenge.png) top left repeat scroll;
+	color: #ccc;
+	margin: 0;
+	padding: 2em;
+	font: 100% Cardo, serif;
+}
+
+#wrapper {
+	max-width: 80em;
+	margin: 0 auto;
+}
+
+h1, h2, h3 {
+	margin: 0;
+	color: #fdd017;
+}
+
+h2, h3 { font-style: italic; }
+
+h1 {
+	font: 700% "Miss Fajardose", cursive;
+	text-shadow: 0 0 0.1em rgba(253, 208, 23, 0.7);
+	text-align: center;
+}
+
+h2 { margin: 1em 0; }
+
+h1 + h2 { margin-top: 0; }
+
+a {
+	color: rgb(253, 208, 23);
+	text-decoration: none;
+	border-bottom: 0.1em solid rgba(253, 208, 23, 0.5);
+}
+	a:hover,
+	.image-link:hover + h3 a {
+		color: rgb(253, 231, 41);
+		border-bottom: 0.1em solid rgb(253, 231, 41);
+	}
+
+.image-link { border: none; }
+
+	.image-link:hover { border: none; }
+
+#releases { margin-top: 1em; }
+
+	.release {
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+		background-color: #1a1a1a; /* Will be replaced by adaptive background color using JavaScript. */
+		padding: 1em;
+		display: inline-block;
+		width: 25%;
+		text-align: center;
+	}
+		.release img {
+			margin-top: 0.5em;
+			-webkit-box-shadow: 0 0 0.5em 0 rgba(20, 20, 20, 0.7);
+			box-shadow: 0 0 0.5em 0 rgba(20, 20, 20, 0.7);
+		}
+
+		.release .year {
+			font-size: 110%;
+			display: inline-block;
+			margin-top: 0.25em;
+		}
+
+#concerts a { margin-left: 1em; }
+
+#links {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+	#links li {
+		display: inline-block;
+		margin-left: 1em;
+	}
+		#links li:first-child { margin-left: 0; }
