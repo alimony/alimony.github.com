@@ -63,7 +63,7 @@ $(document).ready(function () {
 		url: CONCERTS_JSONP_URL,
 		dataType: 'jsonp',
 		success: function (data) {
-			console.log('Successfully fetched concert data:', data);
+			console.log('Successfully fetched concert data:', { data: data });
 
 			var calendar = {};
 			// This object will at the end hold a structure of dates like this:
