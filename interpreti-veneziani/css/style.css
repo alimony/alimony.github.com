@@ -28,6 +28,8 @@ only screen and (min-device-pixel-ratio: 1.5) {
 	margin: 0 auto;
 }
 
+p { margin: 1em 0 0 0; }
+
 h1, h2, h3 {
 	margin: 0;
 	color: #fdd017;
@@ -119,3 +121,9 @@ a {
 		margin: 0 0 0.5em 1em;
 	}
 		#links li:first-child { margin-left: 0; }
+
+#footer {
+	display: inline-block;
+	padding-top: 1em;
+	border-top: 0.1em solid rgba(255, 255, 255, 0.2);
+}
