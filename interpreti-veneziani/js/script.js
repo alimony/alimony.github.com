@@ -42,7 +42,7 @@ $(document).ready(function () {
 
 				elementsToAdd.push('' +
 					'<div class="release">' +
-					'<a class="image-link" href="' + url + '" target="_blank"><img src="' + release.thumb + '" data-adaptive-background="1" /></a>' +
+					'<a class="image-link" href="' + url + '" target="_blank"><img src="' + release.thumb + '" width="150" height="150" data-adaptive-background="1" /></a>' +
 					'<h3><a href="' + url + '" target="_blank">' + title + '</a></h3>' +
 					'<em class="year">' + release.year + '</em>' +
 					'</div>');
