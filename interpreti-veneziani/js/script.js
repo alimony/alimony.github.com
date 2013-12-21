@@ -61,6 +61,7 @@ $(document).ready(function () {
 	// Fetch all upcoming concert dates and wrestle them into a simpler object.
 	$.ajax({
 		url: CONCERTS_JSONP_URL,
+		dataType: 'jsonp',
 		success: function (data) {
 			console.log('Successfully fetched concert data:', data);
 
