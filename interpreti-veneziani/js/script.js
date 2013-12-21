@@ -4,6 +4,7 @@ $(document).ready(function () {
 	var ARTIST_ID = 3592216; // Interpreti Veneziani on Discogs.
 	var RELEASES_API_URL = 'http://api.discogs.com/artists/' + ARTIST_ID + '/releases';
 	var WEBSITE_BASE_URL = 'http://www.interpretiveneziani.com/en';
+	var CONCERTS_JSONP_URL = 'http://rightbox.org/interpreti-veneziani/concerts.php';
 
 	// This will map Discogs id to a release's URL on the official website.
 	var WEBSITE_PATHS = {
@@ -59,7 +60,7 @@ $(document).ready(function () {
 
 	// Fetch all upcoming concert dates and wrestle them into a simpler object.
 	$.ajax({
-		url: 'concerts.json',
+		url: CONCERTS_JSONP_URL,
 		success: function (data) {
 			var calendar = {};
 			// This object will at the end hold a structure of dates like this:
