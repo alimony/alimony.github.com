@@ -1,0 +1,231 @@
+diff --git a/docs/_theme/djangodocs-epub/epub-cover.html b/docs/_theme/djangodocs-epub/epub-cover.html
+new file mode 100644
+index 0000000..24757c5
+--- /dev/null
++++ b/docs/_theme/djangodocs-epub/epub-cover.html
+@@ -0,0 +1,14 @@
++{%- extends "epub/epub-cover.html" %}
++
++{% block content %}
++  <div class="epub-cover">
++    <h1>Django Documentation</h1>
++    <h2><em>{% if version == django_next_version %}
++        Release {{ release }}
++    {% else %}
++        Version {{ version }}
++    {% endif %}</em></h2>
++    <h3>{{ copyright }}</h3>
++    <p>{{ last_updated }}</p>
++  </div>
++{% endblock %}
+diff --git a/docs/_theme/djangodocs-epub/static/docicons-behindscenes.png b/docs/_theme/djangodocs-epub/static/docicons-behindscenes.png
+new file mode 120000
+index 0000000..3f1cd17
+--- /dev/null
++++ b/docs/_theme/djangodocs-epub/static/docicons-behindscenes.png
+@@ -0,0 +1 @@
++../../djangodocs/static/docicons-behindscenes.png
+\ No newline at end of file
+diff --git a/docs/_theme/djangodocs-epub/static/docicons-note.png b/docs/_theme/djangodocs-epub/static/docicons-note.png
+new file mode 120000
+index 0000000..b8193a3
+--- /dev/null
++++ b/docs/_theme/djangodocs-epub/static/docicons-note.png
+@@ -0,0 +1 @@
++../../djangodocs/static/docicons-note.png
+\ No newline at end of file
+diff --git a/docs/_theme/djangodocs-epub/static/docicons-philosophy.png b/docs/_theme/djangodocs-epub/static/docicons-philosophy.png
+new file mode 120000
+index 0000000..26d9a0c
+--- /dev/null
++++ b/docs/_theme/djangodocs-epub/static/docicons-philosophy.png
+@@ -0,0 +1 @@
++../../djangodocs/static/docicons-philosophy.png
+\ No newline at end of file
+diff --git a/docs/_theme/djangodocs-epub/static/docicons-warning.png b/docs/_theme/djangodocs-epub/static/docicons-warning.png
+new file mode 120000
+index 0000000..455195f
+--- /dev/null
++++ b/docs/_theme/djangodocs-epub/static/docicons-warning.png
+@@ -0,0 +1 @@
++../../djangodocs/static/docicons-warning.png
+\ No newline at end of file
+diff --git a/docs/_theme/djangodocs-epub/static/epub.css b/docs/_theme/djangodocs-epub/static/epub.css
+new file mode 100644
+index 0000000..c7225a6
+--- /dev/null
++++ b/docs/_theme/djangodocs-epub/static/epub.css
+@@ -0,0 +1,56 @@
++h1 { margin-top: 0; }
++
++/* Keep lists a bit narrow to maximize page estate regarding width. */
++ol, ul {
++	margin: 0;
++	padding: 0 0 0 1.3em;
++}
++
++/* Images should never exceed the width of the page. */
++img { max-width: 100%; }
++
++/* Don't display URL after links, this is not print. */
++.link-target { display: none; }
++
++/* This is the front cover page of the book. */
++.epub-cover { text-align: center; }
++.epub-cover h1 { margin: 4em 0 0 0; }
++.epub-cover h2 { margin: 1em 0; }
++.epub-cover h3 { margin: 3em 0 2em 0; }
++
++/* Code examples should never exceed the width of the page, so wrap instead. */
++pre, span.pre {
++	white-space: pre-wrap;
++	font-size: 90%;
++}
++
++pre {
++	background-color: #f6f6f6;
++	border: 0;
++	padding: 0.5em;
++}
++
++a:link, a:visited { color: #396623; }
++a:hover { color: #1d3311; }
++
++/* Use special styled note boxes from the default theme, but with the left side
++fitted after the icon, to allow text resizing with breaking. */
++.note, .admonition {
++	background-position: 9px 0.8em;
++	background-repeat: no-repeat;
++	padding: 0.8em 1em 0.8em 65px;
++	margin: 1em 0;
++	border: 0.01em solid black;
++}
++
++.note, .admonition { background-image: url(docicons-note.png); }
++div.admonition-philosophy { background-image: url(docicons-philosophy.png); }
++div.admonition-behind-the-scenes { background-image: url(docicons-behindscenes.png); }
++.admonition.warning { background-image: url(docicons-warning.png); }
++
++.admonition-title {
++	font-weight: bold;
++	margin: 0;
++}
++
++.admonition .last { margin-bottom: 0; }
+diff --git a/docs/_theme/djangodocs-epub/static/license.html b/docs/_theme/djangodocs-epub/static/license.html
+new file mode 100644
+index 0000000..0122964
+--- /dev/null
++++ b/docs/_theme/djangodocs-epub/static/license.html
+@@ -0,0 +1,20 @@
++<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
++<html xmlns="http://www.w3.org/1999/xhtml">
++<head>
++	<title>Conforming XHTML 1.1 Template</title>
++</head>
++<body>
++<p>Copyright (c) Django Software Foundation and individual contributors.<br />
++All rights reserved.</p>
++
++<p>Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:</p>
++
++<p>1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.</p>
++
++<p>2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.</p>
++
++<p>3. Neither the name of Django nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.</p>
++
++<p>THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</p>
++</body>
++</html>
+diff --git a/docs/_theme/djangodocs-epub/theme.conf b/docs/_theme/djangodocs-epub/theme.conf
+new file mode 100644
+index 0000000..8fa0918
+--- /dev/null
++++ b/docs/_theme/djangodocs-epub/theme.conf
+@@ -0,0 +1,8 @@
++[theme]
++inherit = epub
++stylesheet = epub.css
++pygments_style = trac
++
++[options]
++relbar1 = false
++footer = false
+diff --git a/docs/conf.py b/docs/conf.py
+index 6bc293d..adb8ce5 100644
+--- a/docs/conf.py
++++ b/docs/conf.py
+@@ -140,6 +140,12 @@ html_theme_path = ["_theme"]
+ # A shorter title for the navigation bar.  Default is the same as html_title.
+ #html_short_title = None
+ 
++# A dictionary of values to pass into the template engine’s context for all
++# pages.
++html_context = {
++    'django_next_version': django_next_version
++}
++
+ # The name of an image file (relative to this directory) to place at the top
+ # of the sidebar.
+ #html_logo = None
+@@ -273,10 +279,19 @@ texinfo_documents = [(
+ # -- Options for Epub output ---------------------------------------------------
+ 
+ # Bibliographic Dublin Core info.
+-epub_title = 'Django'
++epub_title = project
+ epub_author = 'Django Software Foundation'
+ epub_publisher = 'Django Software Foundation'
+-epub_copyright = '2010, Django Software Foundation'
++epub_copyright = copyright
++
++# The basename for the epub file. It defaults to the project name.
++#epub_basename = 'Django'
++
++# The HTML theme for the epub output. Since the default themes are not optimized
++# for small screen space, using the same theme for HTML and epub output is
++# usually not wise. This defaults to 'epub', a theme designed to save visual
++# space.
++epub_theme = 'djangodocs-epub'
+ 
+ # The language of the text. It defaults to the language option
+ # or en if the language is not set.
+@@ -292,9 +307,17 @@ epub_copyright = '2010, Django Software Foundation'
+ # A unique identification for the text.
+ #epub_uid = ''
+ 
++# A tuple containing the cover image and cover page html template filenames.
++epub_cover = ('', 'epub-cover.html')
++
++# A sequence of (type, uri, title) tuples for the guide element of content.opf.
++#epub_guide = ()
++
+ # HTML files that should be inserted before the pages created by sphinx.
+ # The format is a list of tuples containing the path and title.
+-#epub_pre_files = []
++epub_pre_files = [
++    ('_static/license.html', 'License'),
++]
+ 
+ # HTML files shat should be inserted after the pages created by sphinx.
+ # The format is a list of tuples containing the path and title.
+@@ -308,3 +331,18 @@ epub_copyright = '2010, Django Software Foundation'
+ 
+ # Allow duplicate toc entries.
+ #epub_tocdup = True
++
++# Choose between 'default' and 'includehidden'.
++#epub_tocscope = 'default'
++
++# Fix unsupported image types using the PIL.
++#epub_fix_images = False
++
++# Scale large images.
++#epub_max_image_width = 0
++
++# How to display URL addresses: 'footnote', 'no', or 'inline'.
++#epub_show_urls = 'inline'
++
++# If false, no index is generated.
++#epub_use_index = True
