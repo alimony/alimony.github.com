@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+	{% if page.redirect %}
+	<script>
+	document.location = '{{ page.redirect }}';
+	</script>
+	{% endif %}
 	<meta charset="utf-8" />
 	<title>{{ page.title | strip_html }}</title>
 	<meta name="description" content="{{ page.description | strip_html }}" />
