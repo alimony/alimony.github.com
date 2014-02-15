@@ -10,7 +10,7 @@ exclude_from_rss: true
 		{% for order in (1..site.pages.size) reversed %}
 			{% for p in site.pages %}
 				{% if p.order == order %}
-					<li><a href="{{ p.url }}">{{ p.title }}</a></li>
+					<li><a href="{% if p.redirect %}{{ p.redirect }}{% else %}{{ p.url }}{% endif %}">{{ p.title }}</a></li>
 				{% endif %}
 			{% endfor %}
 		{% endfor %}
