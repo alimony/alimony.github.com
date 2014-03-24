@@ -6,15 +6,20 @@ last_updated: 2012-12-02 00:00:00 +0200
 order: 1
 ---
 <p>GitHub has more than two million users, and host more than four million repositories. Some repositories are very active and others less so, but the daily total number of commits is massive. Each of these commits contains someone’s idea of an improvement to the previously existing code.</p>
+
 <p>Many ideas are highly specific to the project they apply to, though far from all. We can think of an opposite part of the spectrum, where ideas are entirely generic. Whether such ideas even exist is a question of philosophical nature, but we can in any case imagine a range of ideas inbetween the unique and the generic. Ideas to a lesser or greater degree applicable to projects other than the initial one.</p>
+
 <p>The concept behind Lovecraft is to analyze a very large number of code commits, looking for patterns. It may be easiest to illustrate this by an example. A repository features this piece of code:</p>
+
 <p class="code">found = false
 for item in list_of_items:
     if item.is_the_one:
         found = true
 if found:
     do something</p>
+
 <p>Someone notices the rest of the loop can be skipped when the item is found and commits updated code, adding a break statement:</p>
+
 <p class="code">found = false
 for item in list_of_items:
     if item.is_the_one:
@@ -22,15 +27,19 @@ for item in list_of_items:
         <strong>break</strong>
 if found:
     do something</p>
+
 <p>Now, if Lovecraft would look at this change from a generic point of view, disregarding variable names and such, it may turn out that a few thousand other commits in various repositories make the exact same change. And that another thousand repositories have code like the first piece, that could benefit from the one and same change.</p>
+
 <p>Lovecraft connects occurences like this, but on a far more complex level. Based on knowns such as the language of the code, patterns are worked out from billions of commits and any projects that might benefit from found improvements are notified. Quantities also play a part; the more common a certain type of code change is, the more likely is it to be suggested.</p>
+
 <p>In summary, Lovecraft is something similar to static code analysis, but with the world’s collective programming knowledge as its brain. It could spare people some time and computers some cycles.</p>
+
 <p>Someone with the means ought to build it.</p>
 
 <h3>Additional notes</h3>
 
 <ul>
-	<li>As suggested by <a href="http://norvig.com" target="_blank">Peter Norvig</a>, the system could try figuring out the density of bugs and/or commits based on features of the code. For example, is a <span class="nobr">quadruply-nested</span> loop more likely to lead to bugs?</li>
+	<li>As suggested by <a href="http://norvig.com">Peter Norvig</a>, the system could try figuring out the density of bugs and/or commits based on features of the code. For example, is a <span class="nobr">quadruply-nested</span> loop more likely to lead to bugs?</li>
 	<li>Does the amount of comments near certain types of code imply that it needs more explanation than other code, being not very clear? Does certain types of code comments (e.g. “TODO”) more often go with buggy code?</li>
 	<li>Could the number of commits to certain types of code, or the number of references to it from issue tracking systems, mailing lists, etc. say something about how much that code is under discussion and/or maintenance? Much discussed and changed code could mean <span class="nobr">sub-optimal</span> code.</li>
 	<li>With a system modular enough, any indicators of <span class="nobr">“low-quality”</span> code could be fed into it and evaluated. In fact, the system could measure its own performance and what kinds of suggestions that are considered good. For example, suggested improvements later found to have been committed to the original code could be marked as “successful”, a metric then used in upcoming suggestions. The whole thing would be an ever evolving feedback mechanism.</li>
