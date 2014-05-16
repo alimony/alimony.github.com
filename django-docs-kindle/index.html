@@ -1,9 +1,9 @@
 ---
 exclude_from_rss: true
 title: Django documentation for Kindle
-last_built: 2014-03-14 21:19:05 CET
-latest_version: 1.7a2
-latest_commit: 37f7f233f5f30c28ea60a7fbc272ffd296e2dbe1
+last_built: 2014-05-16 12:18:47 CET
+latest_version: 1.7b4
+latest_commit: 6f0dcec44c2a1175dd558d60e526c4c5e7e39c25
 epub_landed_commit: 59d9b264745bb1a4736bb6df4dafb83049835483
 ---
 <!DOCTYPE html>
@@ -68,9 +68,14 @@ epub_landed_commit: 59d9b264745bb1a4736bb6df4dafb83049835483
 		white-space: pre-wrap;
 		background-color: rgb(230, 230, 230);
 		padding: 0.2em 0.4em;
+		border-radius: 0.2em;
 	}
 
-	span.pre { padding: 0.2em 0.3em; }
+	span.pre {
+		display: inline-block;
+		padding: 0.2em 0.3em;
+		margin: 0 0.15em;
+	}
 	</style>
 	{% include google_analytics.html %}
 </head>
@@ -97,7 +102,7 @@ make epub</pre>
 		<pre>kindlegen _build/epub/Django.epub</pre>
 		<p>A separate Sphinx theme for building <span class="pre">.epub</span> was introduced by <a href="https://github.com/django/django/commit/{{ page.epub_landed_commit }}">this commit</a> on the Django <span class="pre">master</span> branch. Without it, generating the <span class="pre">.mobi</span> will fail:
 		<pre>Error(parsing):E3013: More number of characters are hidden using display:none than allowed limit. Limit: 10000  in file: 10000 line: 10000</pre>
-		<p>To apply the needed commit on other branches than <span class="pre">master</span>, check out the branch and cherry-pick it:</p>
+		<p>To apply the needed commit on older branches than <span class="pre">stable/1.7.x</span> or <span class="pre">master</span>, check out the branch and cherry-pick it:</p>
 <pre>git checkout stable/1.6.x
 git cherry-pick {{ page.epub_landed_commit }}</pre>
 		<p>Distributing the Django documentation requires the license to be included in the build. This is already the case with the above downloads. If you want to do your own build, you can apply <a href="django-docs-kindle.diff">this diff</a> to change your local copy of the documentation to include the license in the built <span class="pre">.epub</span>:
