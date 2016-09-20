@@ -1,7 +1,7 @@
 safe: true
 timezone: Europe/Stockholm
 
-baseurl: http://alimony.github.io
+baseurl: https://alimony.github.io
 live_hostname: alimony.github.io
 author: Markus Amalthea Magnuson
 email: markus.magnuson@gmail.com
