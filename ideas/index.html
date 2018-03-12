@@ -1,5 +1,4 @@
 ---
-exclude_from_rss: true
 ---
 {% include ideas_head.html %}
 {% assign sorted = site.pages | sort:'last_updated' | reverse %}
@@ -7,10 +6,10 @@ exclude_from_rss: true
 	<div id="wrapper">
 		<h1>{{ site.ideas_title }}</h1>
 		<ul>
-			{% for p in sorted %}
-				{% unless p.exclude_from_rss %}
-					<li><a href="{% if p.redirect %}{{ p.redirect }}{% else %}{{ p.url }}{% endif %}">{{ p.title }}</a> ({{ p.last_updated|date:'%B %Y' }})</li>
-				{% endunless %}
+			{% for page in sorted %}
+				{% if page.include_in_lists %}
+					<li><a href="{% if page.redirect %}{{ page.redirect }}{% else %}{{ page.url }}{% endif %}">{{ page.title }}</a> ({{ page.last_updated|date:'%B %Y' }})</li>
+				{% endif %}
 			{% endfor %}
 		</ul>
 		<p><strong>{{ site.author }}</strong><br />

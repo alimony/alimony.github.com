@@ -1,5 +1,4 @@
 ---
-exclude_from_rss: true
 ---
 <?xml version="1.0" encoding="UTF-8" ?>
 {% assign sorted = site.pages | sort:'last_updated' | reverse %}
@@ -11,7 +10,7 @@ exclude_from_rss: true
         <atom:link href="{{ site.baseurl }}/ideas/feed.xml" rel="self" type="application/rss+xml" />
         <language>sv</language>
         {% for page in sorted %}
-            {% unless page.exclude_from_rss %}
+            {% if page.include_in_lists %}
             <item>
                 <title>{{ page.title | strip_html | remove:'&shy;' | xml_escape }}</title>
                 <link>{{ site.baseurl }}{{ page.url }}</link>
@@ -20,7 +19,7 @@ exclude_from_rss: true
                 <pubDate>{{ page.last_updated | date_to_rfc822 }}</pubDate>
                 <guid isPermaLink="true">{{ site.baseurl }}{{ page.url }}</guid>
             </item>
-            {% endunless %}
+            {% endif %}
         {% endfor %}
     </channel>
 </rss>
