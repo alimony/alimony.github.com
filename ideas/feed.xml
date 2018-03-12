@@ -1,28 +1,26 @@
 ---
-layout: none
 exclude_from_rss: true
 ---
 <?xml version="1.0" encoding="UTF-8" ?>
+{% assign sorted = site.pages | sort:'last_updated' | reverse %}
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-	<channel>
-		<title>{{ site.ideas_title | xml_escape }}</title>
-		<link>{{ site.baseurl }}</link>
-		<pubDate>{{ site.time | date_to_rfc822 }}</pubDate>
-		<atom:link href="{{ site.baseurl }}/ideas/feed.xml" rel="self" type="application/rss+xml" />
-		<language>sv</language>
-		{% for order in (1..site.pages.size) reversed %}
-			{% for page in site.pages %}
-				{% if page.order == order and page.exclude_from_rss != true %}
-				<item>
-					<title>{{ page.title | strip_html | remove:'&shy;' | xml_escape }}</title>
-					<link>{{ site.baseurl }}{{ page.url }}</link>
-					<description>{{ page.description | strip_html | xml_escape }}</description>
-					<author>{{ site.email }} ({{ site.ideas_title | xml_escape }})</author>
-					<pubDate>{{ page.last_updated | date_to_rfc822 }}</pubDate>
-					<guid isPermaLink="true">{{ site.baseurl }}{{ page.url }}</guid>
-				</item>
-				{% endif %}
-			{% endfor %}
-		{% endfor %}
-	</channel>
+    <channel>
+        <title>{{ site.ideas_title | xml_escape }}</title>
+        <link>{{ site.baseurl }}</link>
+        <pubDate>{{ site.time | date_to_rfc822 }}</pubDate>
+        <atom:link href="{{ site.baseurl }}/ideas/feed.xml" rel="self" type="application/rss+xml" />
+        <language>sv</language>
+        {% for page in sorted %}
+            {% unless page.exclude_from_rss %}
+            <item>
+                <title>{{ page.title | strip_html | remove:'&shy;' | xml_escape }}</title>
+                <link>{{ site.baseurl }}{{ page.url }}</link>
+                <description>{{ page.description | strip_html | xml_escape }}</description>
+                <author>{{ site.email }} ({{ site.ideas_title | xml_escape }})</author>
+                <pubDate>{{ page.last_updated | date_to_rfc822 }}</pubDate>
+                <guid isPermaLink="true">{{ site.baseurl }}{{ page.url }}</guid>
+            </item>
+            {% endunless %}
+        {% endfor %}
+    </channel>
 </rss>
